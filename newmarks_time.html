@@ -5,14 +5,21 @@
 <title>一定の日数が来たら自動でcalssを削除</title>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="script/new.mark.js"></script>
-
+<script>
+$(function() {
+    $('p').newmark({
+      elapsedDays: 14, //経過日数を指定
+      className: 'new' //予定日数を超えると削除されるclass
+    });
+});
+</script>
 <style>
-.red{color:red;}
+.new{color:red;}
 </style>
 </head>
 
 <body>
-<p class="red" data-upload-date="2015/06/27">2015/06/30に設定：30日経過した場合は文字が黒</p>
-<p class="red" data-upload-date="2015/07/02">2015/07/27に設定：30日経過していない場合は文字が赤</p>
+<p class="new" data-upload-date="2015/06/27">2015/06/30に設定：30日経過した場合は文字が黒</p>
+<p class="new" data-upload-date="2015/07/27">2015/07/27に設定：30日経過していない場合は文字が赤</p>
 </body>
 </html>
